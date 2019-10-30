@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "clr-angular": {
+      "projectType": "library",
+      "root": "projects/clr-angular",
+      "sourceRoot": "projects/clr-angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/clr-angular/tsconfig.lib.json",
+            "project": "projects/clr-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/clr-angular/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/clr-angular/src/test.ts",
+            "tsConfig": "projects/clr-angular/tsconfig.spec.json",
+            "karmaConfig": "projects/clr-angular/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/clr-angular/tsconfig.lib.json",
+              "projects/clr-angular/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "clr-ivy"
 }
