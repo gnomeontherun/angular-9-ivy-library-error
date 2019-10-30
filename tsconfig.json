@@ -19,12 +19,8 @@
       "dom"
     ],
     "paths": {
-      "clr-angular": [
-        "dist/clr-angular"
-      ],
-      "clr-angular/*": [
-        "dist/clr-angular/*"
-      ]
+      "@clr/angular": ["projects/clr-angular/src"],
+      "@clr/angular/*": ["projects/clr-angular/src/*"]
     }
   },
   "angularCompilerOptions": {
